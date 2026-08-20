@@ -1,0 +1,327 @@
+:root {
+  --ink: #14171f;
+  --ink-soft: #1c2130;
+  --paper: #f1e9d8;
+  --paper-shadow: #e2d6bb;
+  --rule: #d7c9a6;
+  --red: #ab3a2e;
+  --blue: #33445e;
+  --gold: #b8912f;
+  --font-display: "Fraunces", serif;
+  --font-body: "Inter", sans-serif;
+  --font-hand: "Caveat", cursive;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse 900px 500px at 50% -10%, #232840 0%, transparent 60%),
+    var(--ink);
+  font-family: var(--font-body);
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 20px 64px;
+}
+
+.page {
+  width: 100%;
+  max-width: 620px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+/* ---------- Notebook card ---------- */
+
+.notebook {
+  position: relative;
+  width: 100%;
+  background: var(--paper);
+  border-radius: 3px;
+  padding: 44px 46px 30px 64px;
+  box-shadow:
+    0 1px 0 var(--paper-shadow) inset,
+    0 30px 60px -20px rgba(0,0,0,0.6),
+    0 8px 24px -8px rgba(0,0,0,0.5);
+  transform: rotate(-0.4deg);
+  background-image:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 37px,
+      var(--rule) 38px
+    );
+  background-position: 0 118px;
+}
+
+.notebook::before {
+  /* red margin rule */
+  content: "";
+  position: absolute;
+  left: 46px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(171, 58, 46, 0.35);
+}
+
+.spiral {
+  position: absolute;
+  left: 16px;
+  top: 0;
+  bottom: 0;
+  width: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.spiral::before,
+.spiral::after,
+.spiral {
+  content: "";
+}
+.spiral {
+  background-image: radial-gradient(circle, var(--ink) 0 3.5px, transparent 3.6px);
+  background-size: 12px 34px;
+  background-repeat: repeat-y;
+  opacity: 0.85;
+}
+
+.entry-header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.date {
+  font-family: var(--font-hand);
+  font-size: 20px;
+  color: var(--red);
+  text-transform: capitalize;
+}
+
+.entry-body { position: relative; }
+
+.expression {
+  margin: 0 0 22px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-style: normal;
+  font-size: clamp(28px, 6vw, 42px);
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.circle-wrap {
+  position: relative;
+  display: inline-block;
+  padding: 6px 4px;
+}
+
+.circle-wrap .scribble {
+  position: absolute;
+  inset: -14px -22px;
+  width: calc(100% + 44px);
+  height: calc(100% + 28px);
+  pointer-events: none;
+}
+.circle-wrap .scribble path {
+  fill: none;
+  stroke: var(--red);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  opacity: 0.85;
+}
+
+.explication {
+  margin: 0 0 26px;
+  font-family: var(--font-body);
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  max-width: 46ch;
+}
+
+.exemple {
+  margin: 0 0 8px;
+  padding: 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--blue);
+  border: none;
+}
+.exemple .quote-mark {
+  font-family: var(--font-display);
+  color: var(--gold);
+  font-style: normal;
+}
+
+.entry-footer {
+  margin-top: 34px;
+  padding-top: 18px;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.nav-btn {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--ink-soft);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 4px;
+  letter-spacing: 0.01em;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+.nav-btn:hover { color: var(--red); }
+.nav-btn:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.counter-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.counter {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--rule);
+  color: #9b8c68;
+  letter-spacing: 0.04em;
+}
+
+.today-badge {
+  font-family: var(--font-hand);
+  font-size: 15px;
+  color: var(--red);
+  background: none;
+  border: 1px dashed var(--red);
+  border-radius: 20px;
+  padding: 2px 12px 4px;
+  cursor: pointer;
+}
+.today-badge.hidden { display: none; }
+
+/* ---------- Archive ---------- */
+
+.archive-link {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: #c9beac;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(201,190,172,0.35);
+  padding: 4px 2px;
+  cursor: pointer;
+}
+.archive-link:hover { color: var(--paper); border-color: var(--paper); }
+
+.archive {
+  width: 100%;
+  background: var(--paper);
+  border-radius: 3px;
+  padding: 22px 26px;
+  box-shadow: 0 20px 40px -20px rgba(0,0,0,0.5);
+}
+.archive.hidden { display: none; }
+
+#archive-search {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 14px;
+  padding: 10px 12px;
+  border: 1px solid var(--rule);
+  background: #fbf7ee;
+  border-radius: 3px;
+  margin-bottom: 12px;
+  color: var(--ink);
+}
+#archive-search:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 1px;
+}
+
+.archive ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 340px;
+  overflow-y: auto;
+}
+
+.archive li {
+  border-bottom: 1px solid var(--rule);
+}
+.archive li:last-child { border-bottom: none; }
+
+.archive li button {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px 4px;
+  font-family: var(--font-display);
+  font-size: 15px;
+  color: var(--ink-soft);
+}
+.archive li button:hover { color: var(--red); }
+
+/* ---------- Colophon ---------- */
+
+.colophon {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: #8b8570;
+  text-align: center;
+  max-width: 40ch;
+  line-height: 1.5;
+  margin: 4px 0 0;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 520px) {
+  .notebook { padding: 36px 22px 24px 46px; }
+  .notebook::before { left: 26px; }
+  .spiral { left: 6px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}

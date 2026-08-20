@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Carnet — Expression du jour</title>
+<meta name="description" content="Une nouvelle expression française chaque jour, expliquée et illustrée par un exemple.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page">
+
+  <div class="notebook" id="notebook">
+    <div class="spiral" aria-hidden="true"></div>
+
+    <header class="entry-header">
+      <span class="eyebrow">Le carnet — expression du jour</span>
+      <span class="date" id="date"></span>
+    </header>
+
+    <div class="entry-body">
+      <h1 class="expression">
+        <span class="circle-wrap">
+          <span id="expr-text">Chargement…</span>
+          <svg class="scribble" viewBox="0 0 320 120" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M18,60 C12,24 60,8 160,7 C270,6 306,26 302,58 C298,96 250,113 160,114 C64,115 16,98 18,62" />
+          </svg>
+        </span>
+      </h1>
+
+      <p class="explication" id="explication"></p>
+
+      <blockquote class="exemple">
+        <span class="quote-mark">«</span>
+        <span id="exemple"></span>
+        <span class="quote-mark">»</span>
+      </blockquote>
+    </div>
+
+    <footer class="entry-footer">
+      <button id="prev" class="nav-btn" aria-label="Expression précédente">← précédente</button>
+      <div class="counter-wrap">
+        <span class="counter" id="counter"></span>
+        <button id="today-btn" class="today-badge hidden">aujourd'hui</button>
+      </div>
+      <button id="next" class="nav-btn" aria-label="Expression suivante">suivante →</button>
+    </footer>
+  </div>
+
+  <button id="toggle-archive" class="archive-link">Feuilleter tout le carnet (<span id="archive-count"></span> expressions)</button>
+
+  <div id="archive" class="archive hidden">
+    <input type="text" id="archive-search" placeholder="Chercher une expression…" autocomplete="off">
+    <ul id="archive-list"></ul>
+  </div>
+
+  <p class="colophon">Une expression nouvelle chaque jour — le choix du jour se calcule à partir de la date, aucune connexion nécessaire.</p>
+
+</div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
