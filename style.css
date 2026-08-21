@@ -39,6 +39,46 @@ body {
   gap: 22px;
 }
 
+.site-nav {
+  display: flex;
+  gap: 6px;
+  background: rgba(241, 233, 216, 0.08);
+  border: 1px solid rgba(241, 233, 216, 0.16);
+  border-radius: 999px;
+  padding: 5px;
+}
+
+.site-nav a {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 13px;
+  text-decoration: none;
+  color: #c9beac;
+  padding: 7px 18px;
+  border-radius: 999px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.site-nav a:hover {
+  color: var(--paper);
+}
+
+.site-nav a.active {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.nature-tag {
+  display: inline-block;
+  margin-left: 10px;
+  font-family: var(--font-hand);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--blue);
+  vertical-align: middle;
+  transform: rotate(-2deg);
+}
+
 /* ---------- Notebook card ---------- */
 
 .notebook {

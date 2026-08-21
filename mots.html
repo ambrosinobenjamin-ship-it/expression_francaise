@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Le Carnet — expression du jour</title>
-<meta name="description" content="Une nouvelle expression française chaque jour, expliquée et illustrée par un exemple.">
+<title>Le Lexique — mot rare du jour</title>
+<meta name="description" content="Un mot français peu connu chaque jour, avec sa définition et un exemple.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
@@ -15,15 +15,15 @@
 <div class="page">
 
   <nav class="site-nav">
-    <a href="index.html" class="active">Expressions</a>
-    <a href="mots.html">Mots rares</a>
+    <a href="index.html">Expressions</a>
+    <a href="mots.html" class="active">Mots rares</a>
   </nav>
 
   <div class="notebook" id="notebook">
     <div class="spiral" aria-hidden="true"></div>
 
     <header class="entry-header">
-      <span class="eyebrow">Le carnet — expression du jour</span>
+      <span class="eyebrow">Le lexique — mot rare du jour</span>
       <span class="date" id="date"></span>
     </header>
 
@@ -35,6 +35,7 @@
             <path d="M18,60 C12,24 60,8 160,7 C270,6 306,26 302,58 C298,96 250,113 160,114 C64,115 16,98 18,62" />
           </svg>
         </span>
+        <span class="nature-tag" id="nature-tag"></span>
       </h1>
 
       <p class="explication" id="explication"></p>
@@ -47,27 +48,27 @@
     </div>
 
     <footer class="entry-footer">
-      <button id="prev" class="nav-btn" aria-label="Expression précédente">← précédente</button>
+      <button id="prev" class="nav-btn" aria-label="Mot précédent">← précédent</button>
       <div class="counter-wrap">
         <span class="counter" id="counter"></span>
         <button id="today-btn" class="today-badge hidden">aujourd'hui</button>
       </div>
-      <button id="next" class="nav-btn" aria-label="Expression suivante">suivante →</button>
+      <button id="next" class="nav-btn" aria-label="Mot suivant">suivant →</button>
     </footer>
   </div>
 
-  <button id="toggle-archive" class="archive-link">Feuilleter tout le carnet (<span id="archive-count"></span> expressions)</button>
+  <button id="toggle-archive" class="archive-link">Feuilleter tout le lexique (<span id="archive-count"></span> mots)</button>
 
   <div id="archive" class="archive hidden">
-    <input type="text" id="archive-search" placeholder="Chercher une expression…" autocomplete="off">
+    <input type="text" id="archive-search" placeholder="Chercher un mot…" autocomplete="off">
     <ul id="archive-list"></ul>
   </div>
 
-  <p class="colophon">Une expression nouvelle chaque jour — le choix du jour se calcule à partir de la date, aucune connexion nécessaire.</p>
+  <p class="colophon">Un mot rare chaque jour — le choix du jour se calcule à partir de la date, aucune connexion nécessaire.</p>
 
 </div>
 
-<script src="expressions-data.js"></script>
-<script src="expressions-script.js"></script>
+<script src="mots-data.js"></script>
+<script src="mots-script.js"></script>
 </body>
 </html>
